@@ -1,8 +1,65 @@
 @import "../../stylesheets/variables.scss";
 .edition {
+  width: 90vw;
+  margin: auto;
   height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  &__close {
+    text-decoration: none;
+    color: $color-primary;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  &__input {
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 10px;
+    font-family: $font-main;
+    font-size: 1rem;
+  }
+  &__textarea {
+    border: 2px solid $color-primary;
+    border-radius: 5px;
+    height: 80px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: $font-main;
+  }
+  &__checkbox2 {
+    margin-left: 100px;
+  }
+  &__smiley {
+    color: $color-primary;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+  &__save {
+    margin-top: 30px;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 1rem;
+    font-weight: 800;
+    width: 80px;
+    height: 35px;
+    border-radius: 50px;
+    border: 2px solid $color-primary;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-primary;
+    }
+  }
 }

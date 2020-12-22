@@ -13,7 +13,7 @@ const Footer = () => {
           className="footer__media--github"
           rel="noreferrer"
         >
-          <i class="fab fa-github-alt"></i>
+          <i className="fab fa-github-alt"></i>
         </a>
         <a
           href="//www.linkedin.com/in/luciamezquidajuan/"
@@ -22,7 +22,7 @@ const Footer = () => {
           className="footer__media--linkedin"
           rel="noreferrer"
         >
-          <i class="fab fa-linkedin-in"></i>
+          <i className="fab fa-linkedin-in"></i>
         </a>
         <a
           href="//twitter.com/LuciCodes"
@@ -31,7 +31,7 @@ const Footer = () => {
           className="footer__media--twitter"
           rel="noreferrer"
         >
-          <i class="fab fa-twitter"></i>
+          <i className="fab fa-twitter"></i>
         </a>
       </div>
     </footer>
