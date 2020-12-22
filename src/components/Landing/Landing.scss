@@ -5,4 +5,22 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
+  line-height: 2.6rem;
+  &__title {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  &__link {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 1.2rem;
+    font-weight: 800;
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+  }
 }
