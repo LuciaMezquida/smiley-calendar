@@ -11,6 +11,7 @@ const Footer = () => {
           target="_blank"
           title="Github"
           className="footer__media--github"
+          rel="noreferrer"
         >
           G
         </a>
@@ -19,6 +20,7 @@ const Footer = () => {
           target="_blank"
           title="Linkedin"
           className="footer__media--linkedin"
+          rel="noreferrer"
         >
           L
         </a>
@@ -27,6 +29,7 @@ const Footer = () => {
           target="_blank"
           title="Twitter"
           className="footer__media--twitter"
+          rel="noreferrer"
         >
           T
         </a>
