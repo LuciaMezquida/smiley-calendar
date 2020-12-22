@@ -1,13 +1,14 @@
 import React from "react";
 import "./Landing.scss";
+import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <section className="landing">
       <h1 className="landing__title">Smiley calendar</h1>
       <p className="landing__text">How was your day?</p>
-      <a href="/" className="landing__link">
+      <Link to="/edition" className="landing__link" title="Let's start!">
         Start
-      </a>
+      </Link>
     </section>
   );
 };

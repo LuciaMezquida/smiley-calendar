@@ -5,6 +5,7 @@ import Landing from "./Landing/Landing";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import About from "./About/About";
+import Edition from "./Edition/Edition";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,8 +21,8 @@ class App extends React.Component {
             <Landing />
           </Route>
           <Route path="/about" component={About} />
+          <Route path="/edition" component={Edition} />
         </Switch>
-
         <Footer />
       </div>
     );
