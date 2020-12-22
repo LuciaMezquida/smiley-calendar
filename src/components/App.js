@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Landing from "./Landing/Landing";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -11,8 +12,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Landing />
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <Landing />
+          </Route>
+          <Route path="/about" component={About} />
+        </Switch>
+
         <Footer />
       </div>
     );
