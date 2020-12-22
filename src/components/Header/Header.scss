@@ -1,8 +1,11 @@
-.about {
+.header {
   height: 5vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 30px;
+  text-decoration: none;
+}
+.link {
   text-decoration: none;
 }

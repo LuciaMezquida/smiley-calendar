@@ -1,10 +1,11 @@
 import React from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <a href="/" className="about">
-      About
-    </a>
+    <Link className="link" to="/about">
+      <p className="header">About</p>
+    </Link>
   );
 };
 export default React.memo(Header);
