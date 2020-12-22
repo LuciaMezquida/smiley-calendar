@@ -1,6 +1,6 @@
-import "../stylesheets/App.scss";
 import React from "react";
 import Landing from "./Landing/Landing";
+import Header from "./Header/Header";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Landing />
       </div>
     );
