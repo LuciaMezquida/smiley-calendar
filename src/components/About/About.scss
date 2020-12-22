@@ -2,8 +2,27 @@
 .about {
   height: 95vh;
   padding: 30px;
+  &__title {
+    margin-bottom: 20px;
+  }
   &__btn {
     display: inline-block;
     margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 1.1rem;
+    font-weight: 800;
+    width: 80px;
+    height: 35px;
+    border-radius: 50px;
+    border: 2px solid $color-primary;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-primary;
+    }
   }
 }
