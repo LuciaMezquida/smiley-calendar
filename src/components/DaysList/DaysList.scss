@@ -1,7 +1,13 @@
+@import "../../stylesheets/variables.scss";
 .mainList {
   height: 95vh;
+  overflow: scroll;
   &__button {
-    width: 200px;
-    height: 20px;
+    width: 100vw;
+    height: 30px;
+    border: none;
+    background-color: $color-primary;
+    font-size: 1.6rem;
+    color: $color-secondary;
   }
 }

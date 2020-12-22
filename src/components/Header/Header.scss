@@ -1,3 +1,4 @@
+@import "../../stylesheets/variables.scss";
 .header {
   height: 5vh;
   display: flex;
@@ -5,6 +6,12 @@
   align-items: center;
   padding-right: 30px;
   text-decoration: none;
+  background-color: $color-primary;
+  color: $color-secondary;
+  font-weight: 800;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .link {
   text-decoration: none;

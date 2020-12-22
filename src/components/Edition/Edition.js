@@ -1,5 +1,6 @@
 import "./Edition.scss";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 class Edition extends Component {
   constructor(props) {
@@ -25,8 +26,10 @@ class Edition extends Component {
           Message
         </label>
         <input type="text" name="message" id="message" />
-        <input type="button" value="Save" />
-        <input type="button" value="Cancel" />
+        <Link to="/year">
+          <input type="button" value="Save" />
+          <input type="button" value="Cancel" />
+        </Link>
       </form>
     );
   }

@@ -1,14 +1,19 @@
+@import "../../stylesheets/variables.scss";
 .footer {
   height: 5vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  background-color: $color-primary;
+  color: $color-secondary;
   &__media {
     &--github,
     &--linkedin,
     &--twitter {
       padding-left: 20px;
+
+      color: $color-secondary;
     }
   }
 }
