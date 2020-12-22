@@ -1,3 +1,8 @@
 .about {
   height: 95vh;
+  padding: 30px;
+  &__btn {
+    display: inline-block;
+    margin-top: 40px;
+  }
 }

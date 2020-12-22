@@ -10,7 +10,7 @@ const About = () => {
         el día eligiendo un smiley. La idea es poder ver un periodo de tiempo en
         contexto para que los días malos no puedan a los buenos.
       </p>
-      <Link to="/" className="link">
+      <Link to="/" className="link about__btn" title="Back to landing">
         Back
       </Link>
     </section>

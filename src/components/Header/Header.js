@@ -3,7 +3,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <Link className="link" to="/about">
+    <Link className="link" to="/about" title="More information">
       <p className="header">About</p>
     </Link>
   );
