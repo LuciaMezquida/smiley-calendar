@@ -10,7 +10,7 @@ class DaysList extends Component {
   render() {
     const smileyList = this.props.data.map((item) => (
       <li>
-        <SmileyCard state={item.state} />
+        <SmileyCard state={item.state} date={item.date} />
       </li>
     ));
     return (
