@@ -12,7 +12,6 @@ class Edition extends Component {
     this.props.handleInput(ev);
   }
   render() {
-    const { date, message } = this.props;
     return (
       <form className="edition">
         <label htmlFor="date" className="edition__label">
@@ -54,7 +53,7 @@ class Edition extends Component {
           Message
         </label>
         <textarea
-          onChange={this.handleInput}
+          onBlur={this.handleInput}
           type="text"
           name="message"
           id="message"
@@ -72,7 +71,5 @@ class Edition extends Component {
 
 Edition.propTypes = {
   handleInput: PropTypes.func.isRequired,
-  date: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
 };
 export default Edition;

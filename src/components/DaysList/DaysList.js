@@ -9,8 +9,10 @@ class DaysList extends Component {
   }
   render() {
     const smileyList = this.props.data.map((item) => (
-      <li>
-        <SmileyCard state={item.state} date={item.date} />
+      <li key={item.date}>
+        <Link className="link" to={item.date}>
+          <SmileyCard state={item.state} date={item.date} />
+        </Link>
       </li>
     ));
     return (
@@ -23,5 +25,7 @@ class DaysList extends Component {
     );
   }
 }
-DaysList.propTypes = {};
+DaysList.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 export default DaysList;
