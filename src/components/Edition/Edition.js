@@ -2,9 +2,14 @@ import "./Edition.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
 class Edition extends Component {
   constructor(props) {
     super(props);
+    this.handleInput = this.handleInput.bind(this);
+  }
+  handleInput(ev) {
+    this.props.handleInput(ev);
   }
   render() {
     return (
@@ -12,11 +17,18 @@ class Edition extends Component {
         <label htmlFor="date" className="edition__label">
           Date
         </label>
-        <input type="date" name="date" id="date" className="edition__input" />
+        <input
+          onChange={this.handleInput}
+          type="date"
+          name="date"
+          id="date"
+          className="edition__input"
+        />
         <div className="checkbox-container">
           <h4 className="edition__label">State</h4>
           <label htmlFor="state" className="edition__smiley">
             <input
+              onChange={this.handleInput}
               type="radio"
               name="state"
               id="state"
@@ -27,6 +39,7 @@ class Edition extends Component {
           </label>
           <label htmlFor="state" className="edition__smiley">
             <input
+              onChange={this.handleInput}
               type="radio"
               name="state"
               id="state"
@@ -40,6 +53,7 @@ class Edition extends Component {
           Message
         </label>
         <textarea
+          onChange={this.handleInput}
           type="text"
           name="message"
           id="message"
@@ -54,5 +68,8 @@ class Edition extends Component {
     );
   }
 }
-Edition.propTypes = {};
+
+Edition.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+};
 export default Edition;
