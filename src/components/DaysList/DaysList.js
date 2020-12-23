@@ -3,13 +3,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import SmileyCard from "../SmileyCard/SmileyCard";
+
 class DaysList extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const smileyList = this.props.data.map((item) => (
-      <li key={item.date}>
+    const smileyList = this.props.data.map((item, index) => (
+      <li key={index}>
         <Link className="link" to={item.date}>
           <SmileyCard state={item.state} date={item.date} />
         </Link>

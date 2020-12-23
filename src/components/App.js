@@ -10,6 +10,7 @@ import DaysList from "./DaysList/DaysList";
 import SmileyDetail from "./SmileyDetail/SmileyDetail";
 
 let data = [];
+const info = "info";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,9 @@ class App extends React.Component {
     this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
   }
+  componentDidUpdate() {
+    localStorage.setItem(info, JSON.stringify(this.state));
+  }
   //Events
   handleInput(ev) {
     this.setState({
@@ -33,12 +37,9 @@ class App extends React.Component {
   pushData() {
     const { date, state, message } = this.state;
     if (date !== "" && state !== "" && message !== "") {
-      data.push(this.state);
-      this.setState({
-        date: "",
-        state: "",
-        message: "",
-      });
+      const dataInfo = JSON.parse(localStorage.getItem(info));
+      console.log(dataInfo);
+      data.push(dataInfo);
     }
     return data;
   }
@@ -56,7 +57,6 @@ class App extends React.Component {
     }
   }
   render() {
-    const { date, state, message } = this.state;
     console.log(data);
     return (
       <div className="App">
