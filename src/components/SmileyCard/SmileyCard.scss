@@ -1,0 +1,16 @@
+@import "../../stylesheets/variables.scss";
+.smiley {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+.happy {
+  background-color: $color-happy;
+}
+.unhappy {
+  background-color: $color-unhappy;
+}

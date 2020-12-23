@@ -24,7 +24,6 @@ class Edition extends Component {
           name="date"
           id="date"
           className="edition__input"
-          value={date}
         />
         <div className="checkbox-container">
           <h4 className="edition__label">State</h4>
@@ -61,7 +60,6 @@ class Edition extends Component {
           id="message"
           className="edition__textarea"
           placeholder="How was your day?"
-          value={message}
         />
         <Link className="edition__button-container" to="/year">
           <input type="button" value="Save" className="edition__save" />

@@ -10,4 +10,12 @@
     font-size: 1.6rem;
     color: $color-secondary;
   }
+  &__year {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    width: 95vw;
+    margin: auto;
+    list-style: none;
+  }
 }
