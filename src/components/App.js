@@ -44,7 +44,11 @@ class App extends React.Component {
             <DaysList data={data} />
           </Route>
           <Route path="/edition">
-            <Edition handleInput={this.handleInput} />
+            <Edition
+              handleInput={this.handleInput}
+              date={date}
+              message={message}
+            />
           </Route>
         </Switch>
         <Footer />

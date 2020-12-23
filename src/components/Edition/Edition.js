@@ -12,6 +12,7 @@ class Edition extends Component {
     this.props.handleInput(ev);
   }
   render() {
+    const { date, message } = this.props;
     return (
       <form className="edition">
         <label htmlFor="date" className="edition__label">
@@ -23,6 +24,7 @@ class Edition extends Component {
           name="date"
           id="date"
           className="edition__input"
+          value={date}
         />
         <div className="checkbox-container">
           <h4 className="edition__label">State</h4>
@@ -59,6 +61,7 @@ class Edition extends Component {
           id="message"
           className="edition__textarea"
           placeholder="How was your day?"
+          value={message}
         />
         <Link className="edition__button-container" to="/year">
           <input type="button" value="Save" className="edition__save" />
@@ -71,5 +74,7 @@ class Edition extends Component {
 
 Edition.propTypes = {
   handleInput: PropTypes.func.isRequired,
+  date: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
 export default Edition;
