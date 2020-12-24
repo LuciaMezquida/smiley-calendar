@@ -16,8 +16,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       date: "",
-      message: "",
       state: "",
+      message: "",
       formFull: false,
     };
     this.handleInput = this.handleInput.bind(this);
@@ -35,19 +35,16 @@ class App extends React.Component {
   }
   //Render
   pushData(value) {
-    const { date, state, message } = this.state;
     if (value === "Save") {
       this.setState({ formFull: true });
-      if (date !== "" && state !== "" && message !== "") {
-        const dataInfo = JSON.parse(localStorage.getItem("info"));
-        data.push(dataInfo);
-        this.setState({
-          date: "",
-          message: "",
-          state: "",
-          formFull: false,
-        });
-      }
+      const dataInfo = JSON.parse(localStorage.getItem("info"));
+      data.push(dataInfo);
+      this.setState({
+        date: "",
+        state: "",
+        message: "",
+        formFull: false,
+      });
       return data;
     }
   }
@@ -81,7 +78,11 @@ class App extends React.Component {
             <DaysList data={this.state.formFull ? this.pushData() : data} />
           </Route>
           <Route path="/edition">
-            <Edition handleInput={this.handleInput} pushData={this.pushData} />
+            <Edition
+              handleInput={this.handleInput}
+              pushData={this.pushData}
+              state={this.state.state}
+            />
           </Route>
           <Route path="/:date" render={this.renderSmileyDetail} />
         </Switch>

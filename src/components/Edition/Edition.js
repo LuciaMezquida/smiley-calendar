@@ -19,6 +19,7 @@ class Edition extends Component {
   }
 
   render() {
+    console.log(this.props.state);
     return (
       <form className="edition">
         <label htmlFor="date" className="edition__label">
@@ -67,6 +68,7 @@ class Edition extends Component {
           id="message"
           className="edition__textarea"
           placeholder="How was your day?"
+          disabled={this.props.state === ":)" ? false : true}
         />
         <Link className="edition__button-container" to="/year">
           <input
