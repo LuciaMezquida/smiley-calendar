@@ -8,6 +8,7 @@ import About from "./About/About";
 import Edition from "./Edition/Edition";
 import DaysList from "./DaysList/DaysList";
 import SmileyDetail from "./SmileyDetail/SmileyDetail";
+
 const data = [];
 
 class App extends React.Component {
@@ -23,9 +24,9 @@ class App extends React.Component {
     this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
   }
-  // componentDidUpdate() {
-  //   localStorage.setItem("info", JSON.stringify(this.state));
-  // }
+  componentDidUpdate() {
+    localStorage.setItem("info", JSON.stringify(this.state));
+  }
   //Events
   handleInput(ev) {
     this.setState({
@@ -38,8 +39,8 @@ class App extends React.Component {
     if (value === "Save") {
       this.setState({ formFull: true });
       if (date !== "" && state !== "" && message !== "") {
-        // const dataInfo = JSON.parse(localStorage.getItem("info"));
-        data.push(this.state);
+        const dataInfo = JSON.parse(localStorage.getItem("info"));
+        data.push(dataInfo);
         this.setState({
           date: "",
           message: "",

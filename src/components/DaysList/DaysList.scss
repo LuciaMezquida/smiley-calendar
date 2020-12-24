@@ -3,6 +3,7 @@
   height: 95vh;
   overflow: scroll;
   &__button {
+    position: sticky;
     width: 100vw;
     height: 30px;
     border: none;
