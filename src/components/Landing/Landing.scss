@@ -1,5 +1,9 @@
 @import "../../stylesheets/variables.scss";
 .landing {
+  background-image: url(../../images/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
