@@ -10,6 +10,10 @@
     background-color: $color-primary;
     font-size: 1.6rem;
     color: $color-secondary;
+    @media all and(min-width: 768px) {
+      height: 50px;
+      font-size: 2rem;
+    }
   }
   &__year {
     display: flex;

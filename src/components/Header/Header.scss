@@ -9,6 +9,9 @@
   background-color: $color-primary;
   color: $color-secondary;
   font-weight: 800;
+  @media all and(min-width: 768px) {
+    font-size: 1.4rem;
+  }
   &:hover {
     text-decoration: underline;
   }

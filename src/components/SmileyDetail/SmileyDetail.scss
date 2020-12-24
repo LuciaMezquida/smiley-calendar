@@ -12,7 +12,6 @@
     flex-direction: column;
   }
   &__smiley {
-    background-color: orange;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -20,16 +19,27 @@
     justify-content: center;
     align-items: center;
     font-size: 3rem;
+    @media all and(min-width: 768px) {
+      width: 200px;
+      height: 200px;
+      font-size: 6.4rem;
+    }
   }
   &__date {
     margin: 20px 0;
     font-size: 1.4rem;
-    background-color: orange;
     border-radius: 10px;
     padding: 5px;
+    @media all and(min-width: 768px) {
+      margin: 70px 0;
+      font-size: 2rem;
+    }
   }
   &__message {
     font-size: 1rem;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
   &__button {
     display: inline-block;
@@ -46,6 +56,11 @@
     border-radius: 50px;
     border: 2px solid $color-primary;
     transition: 0.5s ease;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+      width: 100px;
+      height: 45px;
+    }
     &:hover {
       background-color: $color-secondary;
       color: $color-primary;

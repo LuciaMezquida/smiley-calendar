@@ -8,13 +8,18 @@
   background-color: $color-primary;
   color: $color-secondary;
   font-weight: 700;
+  @media all and(min-width: 768px) {
+    font-size: 1.4rem;
+  }
   &__media {
     &--github,
     &--linkedin,
     &--twitter {
       padding-left: 20px;
-
       color: $color-secondary;
+      @media all and(min-width: 768px) {
+        padding-left: 50px;
+      }
     }
   }
 }

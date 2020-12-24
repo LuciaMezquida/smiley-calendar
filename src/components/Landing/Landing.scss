@@ -9,6 +9,15 @@
   &__title {
     font-size: 2rem;
     text-transform: capitalize;
+    @media all and(min-width: 768px) {
+      margin: 40px;
+      font-size: 3.4rem;
+    }
+  }
+  &__text {
+    @media all and(min-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
   &__link {
     margin-top: 70px;
@@ -24,6 +33,11 @@
     border-radius: 50px;
     border: 2px solid $color-primary;
     transition: 0.5s ease;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+      width: 100px;
+      height: 45px;
+    }
     &:hover {
       background-color: $color-secondary;
       color: $color-primary;

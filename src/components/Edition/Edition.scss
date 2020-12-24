@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media all and(min-width: 768px) {
+    width: 60vw;
+  }
   &__close {
     text-decoration: none;
     color: $color-primary;
@@ -16,6 +19,10 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-top: 20px;
+    @media all and(min-width: 768px) {
+      font-size: 1.8rem;
+      margin-top: 50px;
+    }
   }
   &__input {
     border: 2px solid $color-primary;
@@ -24,6 +31,10 @@
     padding-left: 10px;
     font-family: $font-main;
     font-size: 1rem;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+      height: 60px;
+    }
   }
   &__textarea {
     border: 2px solid $color-primary;
@@ -32,6 +43,10 @@
     padding: 5px 10px;
     font-size: 1rem;
     font-family: $font-main;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+      height: 140px;
+    }
   }
   &__checkbox2 {
     margin-left: 100px;
@@ -40,6 +55,9 @@
     color: $color-primary;
     font-size: 1.4rem;
     font-weight: 800;
+    @media all and(min-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
   &__button-container {
     display: flex;
@@ -57,6 +75,11 @@
     border-radius: 50px;
     border: 2px solid $color-primary;
     transition: 0.5s ease;
+    @media all and(min-width: 768px) {
+      font-size: 1.4rem;
+      width: 100px;
+      height: 45px;
+    }
     &:hover {
       background-color: $color-secondary;
       color: $color-primary;
