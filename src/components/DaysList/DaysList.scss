@@ -2,19 +2,32 @@
 .mainList {
   height: 95vh;
   overflow: scroll;
-  &__button {
-    position: sticky;
-    width: 100vw;
-    height: 30px;
-    border: none;
-    background-color: $color-primary;
-    font-size: 1.6rem;
-    color: $color-secondary;
-    @media all and(min-width: 768px) {
-      height: 50px;
-      font-size: 2rem;
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      width: 100vw;
+      height: 30px;
+      border: none;
+      background-color: $color-primary;
+      font-size: 1.6rem;
+      color: $color-secondary;
+      transition: 0.5s ease;
+      @media all and(min-width: 768px) {
+        box-shadow: 3px 5px 18px -7px rgba(0, 0, 0, 0.77);
+        margin-top: 10px;
+        width: 120px;
+        height: 70px;
+        border-radius: 50px;
+        font-size: 2.2rem;
+      }
     }
   }
+
   &__year {
     display: flex;
     flex-wrap: wrap;

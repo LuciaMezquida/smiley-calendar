@@ -15,9 +15,15 @@ class DaysList extends Component {
     ));
     return (
       <main className="mainList">
-        <Link to="/edition">
-          <button className="mainList__button">+</button>
-        </Link>
+        <div className="mainList__button-container">
+          <Link
+            className="mainList__button-container--button link"
+            to="/edition"
+            title="Add smiley"
+          >
+            +
+          </Link>
+        </div>
         <ul className="mainList__year">{smileyList}</ul>
       </main>
     );
