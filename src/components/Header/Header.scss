@@ -1,14 +1,13 @@
 @import "../../stylesheets/variables.scss";
 .header {
   height: 5vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
   padding-right: 30px;
   text-decoration: none;
-  background-color: $color-primary;
-  color: $color-secondary;
-  font-weight: 800;
+  color: $color-primary;
+  font-weight: 900;
   @media all and(min-width: 768px) {
     font-size: 1.4rem;
   }
