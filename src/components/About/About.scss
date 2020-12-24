@@ -10,6 +10,11 @@
       text-align: center;
     }
   }
+  &__text {
+    @media all and(min-width: 1024px) {
+      font-size: 1.2rem;
+    }
+  }
   &__btn {
     margin: auto;
     display: inline-block;

@@ -19,7 +19,6 @@ class Edition extends Component {
   }
 
   render() {
-    console.log(this.props.state);
     return (
       <form className="edition">
         <label htmlFor="date" className="edition__label">
@@ -70,15 +69,19 @@ class Edition extends Component {
           placeholder="How was your day?"
           disabled={this.props.state === ":)" ? false : true}
         />
-        <Link className="edition__button-container" to="/year">
-          <input
-            type="button"
-            value="Save"
-            className="edition__save"
-            onClick={this.pushData}
-          />
-          <input type="button" value="Cancel" className="edition__save" />
-        </Link>
+        <div className="edition__button-container">
+          <Link to="/year" title="Save smiley">
+            <input
+              type="button"
+              value="Save"
+              className="edition__save"
+              onClick={this.pushData}
+            />
+          </Link>
+          <Link to="/year" title="Back to calendar">
+            <input type="button" value="Cancel" className="edition__save" />
+          </Link>
+        </div>
       </form>
     );
   }
