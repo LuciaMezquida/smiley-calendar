@@ -2,15 +2,22 @@ import "./Edition.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+// import { getCurrentDate } from "../../utils/getData";
 
 class Edition extends Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
+    this.pushData = this.pushData.bind(this);
   }
   handleInput(ev) {
     this.props.handleInput(ev);
   }
+  pushData(ev) {
+    const value = ev.currentTarget.value;
+    this.props.pushData(value);
+  }
+
   render() {
     return (
       <form className="edition">
@@ -22,6 +29,7 @@ class Edition extends Component {
           type="date"
           name="date"
           id="date"
+          // value={getCurrentDate()}
           className="edition__input"
         />
         <div className="checkbox-container">
@@ -61,7 +69,12 @@ class Edition extends Component {
           placeholder="How was your day?"
         />
         <Link className="edition__button-container" to="/year">
-          <input type="button" value="Save" className="edition__save" />
+          <input
+            type="button"
+            value="Save"
+            className="edition__save"
+            onClick={this.pushData}
+          />
           <input type="button" value="Cancel" className="edition__save" />
         </Link>
       </form>

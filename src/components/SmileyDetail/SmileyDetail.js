@@ -2,6 +2,7 @@ import "./SmileyDetail.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
 const SmileyDetail = ({ date, state, message }) => {
   return (
     <div className="detail">
