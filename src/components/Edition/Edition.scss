@@ -68,6 +68,7 @@
     text-decoration: none;
   }
   &__save {
+    outline: none;
     margin-top: 30px;
     cursor: pointer;
     background-color: $color-primary;

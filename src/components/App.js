@@ -34,7 +34,8 @@ class App extends React.Component {
   }
   //Render
   pushData(value) {
-    if (value === "Save") {
+    const { date, state, message } = this.state;
+    if ((value === "Save" && date !== "" && state !== "") || message !== "") {
       this.setState({ formFull: true });
       const dataInfo = JSON.parse(localStorage.getItem("info"));
       data.push(dataInfo);
