@@ -11,14 +11,22 @@
   height: 90vh;
   line-height: 2.6rem;
   &__title {
-    font-size: 2rem;
+    color: $color-primary;
+    text-shadow: 3px 3px 9px rgba(150, 150, 150, 1);
+    font-size: 2.4rem;
+    font-weight: 800;
     text-transform: capitalize;
+    transition: 0.5s ease;
     @media all and(min-width: 768px) {
       margin: 40px;
-      font-size: 3.4rem;
+      font-size: 4.4rem;
+    }
+    @media all and(min-width: 1024px) {
+      font-size: 5.4rem;
     }
   }
   &__text {
+    opacity: 0.6;
     @media all and(min-width: 768px) {
       font-size: 1.6rem;
     }

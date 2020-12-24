@@ -9,6 +9,9 @@
   @media all and(min-width: 768px) {
     width: 60vw;
   }
+  @media all and(min-width: 1024px) {
+    width: 40vw;
+  }
   &__close {
     text-decoration: none;
     color: $color-primary;
