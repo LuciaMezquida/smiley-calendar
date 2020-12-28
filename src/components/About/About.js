@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <section className="about">
-      <h2 className="about__title">What's the proposal of this app?</h2>
+      <h2 className="about__title">What's the purpose of this app?</h2>
       <p className="about__text1">Practice! Practice! Practice!</p>
       <p className="about__text">
         It is a calendar in which each day you write down how the day has gone
