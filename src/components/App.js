@@ -15,7 +15,7 @@ class App extends React.Component {
       date: "",
       state: "",
       message: "",
-      good: false,
+      happy: false,
       sad: false,
     };
     this.smileyData = JSON.parse(localStorage.getItem("info"))
@@ -35,7 +35,6 @@ class App extends React.Component {
     });
   }
   handleCheck(ev) {
-    console.log(ev.currentTarget.value);
     this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
   }
   //Render
@@ -54,7 +53,7 @@ class App extends React.Component {
   }
   filterSmiley() {
     let goodSmiley;
-    if (this.state.good) {
+    if (this.state.happy) {
       goodSmiley = this.smileyData.filter((item) => item.state === ":)");
     }
     if (this.state.sad) {

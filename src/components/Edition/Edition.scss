@@ -51,8 +51,15 @@
       height: 140px;
     }
   }
-  &__checkbox2 {
+  &__radio-btn2 {
     margin-left: 100px;
+  }
+  &__radio-btn,
+  &__radio-btn2 {
+    @media all and(min-width: 1024px) {
+      width: 20px;
+      height: 20px;
+    }
   }
   &__smiley {
     color: $color-primary;

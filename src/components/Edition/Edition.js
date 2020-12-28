@@ -41,7 +41,7 @@ class Edition extends Component {
               name="state"
               id="state"
               value=":)"
-              className="edition__checkbox"
+              className="edition__radio-btn"
             />{" "}
             :)
           </label>
@@ -52,7 +52,7 @@ class Edition extends Component {
               name="state"
               id="state"
               value=":("
-              className="edition__checkbox2"
+              className="edition__radio-btn2"
             />{" "}
             :(
           </label>

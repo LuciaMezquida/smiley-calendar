@@ -31,9 +31,9 @@ class DaysList extends Component {
             <FormGroup aria-label="position" row>
               <FormControlLabel
                 onChange={this.handleCheck}
-                value="good"
+                value="happy"
                 control={<Switch color="primary" />}
-                label=":)"
+                label="Happy"
                 labelPlacement="start"
                 className="mainList__button-container--smiley"
               />
@@ -52,7 +52,7 @@ class DaysList extends Component {
                 onChange={this.handleCheck}
                 value="sad"
                 control={<Switch color="primary" />}
-                label=":("
+                label="Sad"
                 labelPlacement="end"
                 className="mainList__button-container--smiley"
               />
