@@ -17,7 +17,6 @@ class App extends React.Component {
       date: "",
       state: "",
       message: "",
-      formFull: false,
     };
     this.handleInput = this.handleInput.bind(this);
     this.pushData = this.pushData.bind(this);
@@ -36,14 +35,12 @@ class App extends React.Component {
   pushData(value) {
     const { date, state, message } = this.state;
     if ((value === "Save" && date !== "" && state !== "") || message !== "") {
-      this.setState({ formFull: true });
       const dataInfo = JSON.parse(localStorage.getItem("info"));
       data.push(dataInfo);
       this.setState({
         date: "",
         state: "",
         message: "",
-        formFull: false,
       });
       return data;
     }
