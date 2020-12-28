@@ -8,8 +8,6 @@ import Edition from "./Edition/Edition";
 import DaysList from "./DaysList/DaysList";
 import SmileyDetail from "./SmileyDetail/SmileyDetail";
 
-const data = [];
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,13 +16,14 @@ class App extends React.Component {
       state: "",
       message: "",
     };
+    this.smileyData = JSON.parse(localStorage.getItem("info"))
+      ? JSON.parse(localStorage.getItem("info"))
+      : [];
     this.handleInput = this.handleInput.bind(this);
     this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
   }
-  componentDidUpdate() {
-    localStorage.setItem("info", JSON.stringify(this.state));
-  }
+
   //Events
   handleInput(ev) {
     this.setState({
@@ -35,19 +34,21 @@ class App extends React.Component {
   pushData(value) {
     const { date, state, message } = this.state;
     if ((value === "Save" && date !== "" && state !== "") || message !== "") {
-      const dataInfo = JSON.parse(localStorage.getItem("info"));
-      data.push(dataInfo);
+      this.smileyData.push(this.state);
+      localStorage.setItem("info", JSON.stringify(this.smileyData));
       this.setState({
         date: "",
         state: "",
         message: "",
       });
-      return data;
+      return this.smileyData;
     }
   }
   renderSmileyDetail(props) {
     const smileyDetailDate = props.match.params.date;
-    const smileyDetail = data.find((item) => item.date === smileyDetailDate);
+    const smileyDetail = this.smileyData.find(
+      (item) => item.date === smileyDetailDate
+    );
     if (smileyDetail) {
       return (
         <SmileyDetail
@@ -59,10 +60,7 @@ class App extends React.Component {
     }
   }
   render() {
-    console.log(data);
-    console.log(this.state.date);
-    console.log(this.state.state);
-    console.log(this.state.message);
+    console.log(this.smileyData);
     return (
       <div className="App">
         <Switch>
@@ -71,7 +69,7 @@ class App extends React.Component {
           </Route>
           <Route path="/about" component={About} />
           <Route path="/year">
-            <DaysList data={this.state.formFull ? this.pushData() : data} />
+            <DaysList data={this.smileyData} />
           </Route>
           <Route path="/edition">
             <Edition
