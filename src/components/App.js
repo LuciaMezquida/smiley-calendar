@@ -15,6 +15,8 @@ class App extends React.Component {
       date: "",
       state: "",
       message: "",
+      good: false,
+      sad: false,
     };
     this.smileyData = JSON.parse(localStorage.getItem("info"))
       ? JSON.parse(localStorage.getItem("info"))
@@ -22,6 +24,8 @@ class App extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.filterSmiley = this.filterSmiley.bind(this);
   }
 
   //Events
@@ -29,6 +33,10 @@ class App extends React.Component {
     this.setState({
       [ev.currentTarget.name]: ev.currentTarget.value,
     });
+  }
+  handleCheck(ev) {
+    console.log(ev.currentTarget.value);
+    this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
   }
   //Render
   pushData(value) {
@@ -43,6 +51,17 @@ class App extends React.Component {
       });
       return this.smileyData;
     }
+  }
+  filterSmiley() {
+    let goodSmiley;
+    if (this.state.good) {
+      goodSmiley = this.smileyData.filter((item) => item.state === ":)");
+    }
+    if (this.state.sad) {
+      goodSmiley = this.smileyData.filter((item) => item.state === ":(");
+    }
+
+    return goodSmiley;
   }
   renderSmileyDetail(props) {
     const smileyDetailDate = props.match.params.date;
@@ -60,7 +79,6 @@ class App extends React.Component {
     }
   }
   render() {
-    console.log(this.smileyData);
     return (
       <div className="App">
         <Switch>
@@ -69,7 +87,14 @@ class App extends React.Component {
           </Route>
           <Route path="/about" component={About} />
           <Route path="/year">
-            <DaysList data={this.smileyData} />
+            <DaysList
+              data={
+                this.filterSmiley() !== undefined
+                  ? this.filterSmiley()
+                  : this.smileyData
+              }
+              handleCheck={this.handleCheck}
+            />
           </Route>
           <Route path="/edition">
             <Edition

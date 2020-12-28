@@ -9,6 +9,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 
 class DaysList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleCheck = this.handleCheck.bind(this);
+  }
+  handleCheck(ev) {
+    this.props.handleCheck(ev);
+  }
   render() {
     const smileyList = this.props.data.map((item, index) => (
       <li key={index}>
@@ -23,7 +30,8 @@ class DaysList extends Component {
           <FormControl component="fieldset">
             <FormGroup aria-label="position" row>
               <FormControlLabel
-                value="start"
+                onChange={this.handleCheck}
+                value="good"
                 control={<Switch color="primary" />}
                 label=":)"
                 labelPlacement="start"
@@ -41,7 +49,8 @@ class DaysList extends Component {
           <FormControl component="fieldset">
             <FormGroup aria-label="position" row>
               <FormControlLabel
-                value="end"
+                onChange={this.handleCheck}
+                value="sad"
                 control={<Switch color="primary" />}
                 label=":("
                 labelPlacement="end"
