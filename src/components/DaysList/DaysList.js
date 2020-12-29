@@ -12,9 +12,13 @@ class DaysList extends Component {
   constructor(props) {
     super(props);
     this.handleCheck = this.handleCheck.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   handleCheck(ev) {
     this.props.handleCheck(ev);
+  }
+  handleReset() {
+    this.props.handleReset();
   }
   render() {
     const smileyList = this.props.data
@@ -62,7 +66,7 @@ class DaysList extends Component {
           </FormControl>
         </div>
         <ul className="mainList__year">{smileyList}</ul>
-        <button className="mainList__reset">
+        <button className="mainList__reset" onClick={this.handleReset}>
           <i className="far fa-trash-alt"></i>
         </button>
       </main>
@@ -72,5 +76,6 @@ class DaysList extends Component {
 DaysList.propTypes = {
   data: PropTypes.array.isRequired,
   handleCheck: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 export default DaysList;

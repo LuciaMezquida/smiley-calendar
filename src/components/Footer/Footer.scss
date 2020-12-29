@@ -12,6 +12,8 @@
     font-size: 1.4rem;
   }
   &__media {
+    list-style: none;
+    display: flex;
     &--github,
     &--linkedin,
     &--twitter {

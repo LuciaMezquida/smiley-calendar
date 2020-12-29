@@ -27,6 +27,7 @@ class App extends React.Component {
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.filterSmiley = this.filterSmiley.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   //Events
@@ -37,6 +38,11 @@ class App extends React.Component {
   }
   handleCheck(ev) {
     this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
+  }
+  handleReset() {
+    localStorage.clear();
+    this.smileyData = [];
+    this.forceUpdate();
   }
   //Render
   pushData(value) {
@@ -94,6 +100,7 @@ class App extends React.Component {
                   : this.smileyData
               }
               handleCheck={this.handleCheck}
+              handleReset={this.handleReset}
             />
           </Route>
           <Route path="/edition">
