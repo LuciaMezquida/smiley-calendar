@@ -8,9 +8,7 @@
   text-decoration: none;
   color: $color-primary;
   font-weight: 900;
-  @media all and(min-width: 768px) {
-    font-size: 1.4rem;
-  }
+  font-size: 1.4rem;
   &:hover {
     text-decoration: underline;
   }
