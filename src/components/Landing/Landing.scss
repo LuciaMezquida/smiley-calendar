@@ -27,8 +27,9 @@
   }
   &__text {
     opacity: 0.6;
+    font-size: 1.5rem;
     @media all and(min-width: 768px) {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
   &__link {
@@ -38,7 +39,7 @@
     justify-content: center;
     background-color: $color-primary;
     color: $color-secondary;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 800;
     width: 100px;
     height: 45px;
@@ -46,7 +47,6 @@
     border: 2px solid $color-primary;
     transition: 0.5s ease;
     @media all and(min-width: 768px) {
-      font-size: 1.4rem;
       width: 120px;
       height: 55px;
     }
