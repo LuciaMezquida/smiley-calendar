@@ -7,12 +7,13 @@ import About from "./About/About";
 import Edition from "./Edition/Edition";
 import DaysList from "./DaysList/DaysList";
 import SmileyDetail from "./SmileyDetail/SmileyDetail";
+import { getCurrentDate } from "../utils/getData";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "",
+      date: getCurrentDate(),
       state: "",
       message: "",
       happy: false,
@@ -100,6 +101,7 @@ class App extends React.Component {
               handleInput={this.handleInput}
               pushData={this.pushData}
               state={this.state.state}
+              date={this.state.date}
             />
           </Route>
           <Route path="/:date" render={this.renderSmileyDetail} />

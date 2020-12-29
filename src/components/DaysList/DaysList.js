@@ -66,5 +66,6 @@ class DaysList extends Component {
 }
 DaysList.propTypes = {
   data: PropTypes.array.isRequired,
+  handleCheck: PropTypes.func.isRequired,
 };
 export default DaysList;

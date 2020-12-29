@@ -2,7 +2,6 @@ import "./Edition.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-// import { getCurrentDate } from "../../utils/getData";
 
 class Edition extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class Edition extends Component {
           type="date"
           name="date"
           id="date"
-          // value={getCurrentDate()}
+          value={this.props.date}
           className="edition__input"
         />
         <div className="checkbox-container">
@@ -89,5 +88,8 @@ class Edition extends Component {
 
 Edition.propTypes = {
   handleInput: PropTypes.func.isRequired,
+  pushData: PropTypes.func.isRequired,
+  state: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
 };
 export default Edition;
