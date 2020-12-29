@@ -17,13 +17,15 @@ class DaysList extends Component {
     this.props.handleCheck(ev);
   }
   render() {
-    const smileyList = this.props.data.map((item, index) => (
-      <li key={index}>
-        <Link className="link" to={`/${item.date}`}>
-          <SmileyCard state={item.state} date={item.date} />
-        </Link>
-      </li>
-    ));
+    const smileyList = this.props.data
+      .sort((a, b) => new Date(a.date) > new Date(b.date))
+      .map((item, index) => (
+        <li key={index}>
+          <Link className="link" to={`/${item.date}`}>
+            <SmileyCard state={item.state} date={item.date} />
+          </Link>
+        </li>
+      ));
     return (
       <main className="mainList">
         <div className="mainList__button-container">
