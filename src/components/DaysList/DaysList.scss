@@ -16,7 +16,6 @@
       align-items: center;
       border: none;
       background-color: $color-primary;
-      font-size: 1.6rem;
       color: $color-secondary;
       box-shadow: 3px 5px 18px -7px rgba(0, 0, 0, 0.77);
       margin: 10px 20px 0;
@@ -35,7 +34,6 @@
       }
     }
   }
-
   &__year {
     display: flex;
     flex-wrap: wrap;
@@ -43,5 +41,31 @@
     width: 95vw;
     margin: auto;
     list-style: none;
+  }
+  &__reset {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #a1a0a0;
+    font-size: 1rem;
+    color: $color-secondary;
+    margin: 10px 20px 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    @media all and (min-width: 768px) {
+      top: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }

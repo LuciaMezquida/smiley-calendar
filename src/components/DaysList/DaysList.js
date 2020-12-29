@@ -62,6 +62,9 @@ class DaysList extends Component {
           </FormControl>
         </div>
         <ul className="mainList__year">{smileyList}</ul>
+        <button className="mainList__reset">
+          <i className="far fa-trash-alt"></i>
+        </button>
       </main>
     );
   }
