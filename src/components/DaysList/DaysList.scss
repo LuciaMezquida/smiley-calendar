@@ -43,9 +43,6 @@
     list-style: none;
   }
   &__reset {
-    position: absolute;
-    top: 30px;
-    right: 0;
     outline: none;
     display: flex;
     justify-content: center;
@@ -54,13 +51,15 @@
     background-color: #a1a0a0;
     font-size: 1rem;
     color: $color-secondary;
-    margin: 10px 20px 0;
+    margin: 10px 0 0 88%;
     width: 30px;
     height: 30px;
     border-radius: 50px;
     font-size: 1rem;
     @media all and (min-width: 768px) {
+      position: absolute;
       top: 10px;
+      right: 20px;
       width: 40px;
       height: 40px;
     }

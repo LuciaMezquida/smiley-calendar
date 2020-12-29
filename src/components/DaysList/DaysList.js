@@ -32,6 +32,9 @@ class DaysList extends Component {
       ));
     return (
       <main className="mainList">
+        <button className="mainList__reset" onClick={this.handleReset}>
+          <i className="far fa-trash-alt"></i>
+        </button>
         <div className="mainList__button-container">
           <FormControl component="fieldset">
             <FormGroup aria-label="position" row>
@@ -66,9 +69,6 @@ class DaysList extends Component {
           </FormControl>
         </div>
         <ul className="mainList__year">{smileyList}</ul>
-        <button className="mainList__reset" onClick={this.handleReset}>
-          <i className="far fa-trash-alt"></i>
-        </button>
       </main>
     );
   }
