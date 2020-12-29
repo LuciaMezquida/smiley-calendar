@@ -18,7 +18,7 @@ class DaysList extends Component {
   }
   render() {
     const smileyList = this.props.data
-      .sort((a, b) => new Date(a.date) > new Date(b.date))
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
       .map((item, index) => (
         <li key={index}>
           <Link className="link" to={`/${item.date}`}>
