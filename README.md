@@ -1,5 +1,6 @@
 # Smiley Calendar
 ![giphy](https://media.giphy.com/media/Ww26UTo6jq36WnRl5l/giphy.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
