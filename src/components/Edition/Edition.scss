@@ -98,3 +98,35 @@
     }
   }
 }
+.circle {
+  width: 70px;
+  height: 70px;
+  background-color: $color-happy;
+  border-radius: 50%;
+  transform: translate(-50px, 0px);
+  animation: left 60s ease;
+}
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background-color: $color-unhappy;
+  border-radius: 50%;
+  transform: translate(50px, 50px);
+  animation: right 40s ease;
+}
+@keyframes right {
+  from {
+    transform: translate(50px, 50px);
+  }
+  to {
+    transform: translate(700px, -50px);
+  }
+}
+@keyframes left {
+  from {
+    transform: translate(-50px, 0px);
+  }
+  to {
+    transform: translate(-700px, -200px);
+  }
+}
