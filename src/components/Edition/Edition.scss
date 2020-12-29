@@ -5,8 +5,9 @@
   height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   @media all and(min-width: 768px) {
+    padding-top: 7vh;
     width: 60vw;
   }
   @media all and(min-width: 1024px) {
