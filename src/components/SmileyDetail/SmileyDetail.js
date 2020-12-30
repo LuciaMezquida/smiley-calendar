@@ -3,7 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const SmileyDetail = ({ date, state, message }) => {
+const SmileyDetail = ({ date, state, message, handleDeleteBtn }) => {
+  const handleDelete = (ev) => {
+    handleDeleteBtn(ev);
+  };
   return (
     <div className="detail">
       <article className="detail__article">
@@ -19,6 +22,11 @@ const SmileyDetail = ({ date, state, message }) => {
       </article>
       <Link className="link detail__button" to="/year">
         Back
+      </Link>
+      <Link className="link" to="/year">
+        <button name={date} className="detail__delete" onClick={handleDelete}>
+          <i className="far fa-trash-alt"></i>
+        </button>
       </Link>
     </div>
   );

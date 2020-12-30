@@ -28,6 +28,7 @@ class App extends React.Component {
     this.handleCheck = this.handleCheck.bind(this);
     this.filterSmiley = this.filterSmiley.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleDeleteBtn = this.handleDeleteBtn.bind(this);
   }
 
   //Events
@@ -43,6 +44,18 @@ class App extends React.Component {
     localStorage.clear();
     this.smileyData = [];
     this.forceUpdate();
+  }
+  handleDeleteBtn(ev) {
+    const dateButton = ev.currentTarget.name;
+    const indexDateButton = this.smileyData.findIndex((item) => {
+      return item.date === dateButton;
+    });
+    this.forceUpdate();
+    this.smileyData.splice(indexDateButton, 1);
+
+    console.log(indexDateButton);
+    console.log(this.smileyData);
+    console.log(ev.currentTarget.name);
   }
   //Render
   pushData(value) {
@@ -80,6 +93,7 @@ class App extends React.Component {
           state={smileyDetail.state}
           date={smileyDetail.date}
           message={smileyDetail.message}
+          handleDeleteBtn={this.handleDeleteBtn}
         />
       );
     }

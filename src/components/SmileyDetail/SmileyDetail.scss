@@ -61,9 +61,30 @@
       width: 120px;
       height: 55px;
     }
+
     &:hover {
       background-color: $color-secondary;
       color: $color-primary;
+    }
+  }
+  &__delete {
+    outline: none;
+    border: none;
+    background-color: #a1a0a0;
+    font-size: 1rem;
+    color: $color-secondary;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    &:active {
+      transform: scale(0.9);
+    }
+    @media all and (min-width: 768px) {
+      width: 40px;
+      height: 40px;
     }
   }
 }
