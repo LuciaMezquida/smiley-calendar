@@ -32,7 +32,11 @@ class DaysList extends Component {
       ));
     return (
       <main className="mainList">
-        <button className="mainList__reset" onClick={this.handleReset}>
+        <button
+          title="Reset"
+          className="mainList__reset"
+          onClick={this.handleReset}
+        >
           <i className="far fa-trash-alt"></i>
         </button>
         <div className="mainList__button-container">

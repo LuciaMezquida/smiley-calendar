@@ -20,11 +20,20 @@ const SmileyDetail = ({ date, state, message, handleDeleteBtn }) => {
         </p>
         <p className="detail__message">{message}</p>
       </article>
-      <Link className="link detail__button" to="/year">
+      <Link
+        className="link detail__button"
+        to="/year"
+        title="Back to smiley panel"
+      >
         Back
       </Link>
       <Link className="link" to="/year">
-        <button name={date} className="detail__delete" onClick={handleDelete}>
+        <button
+          title="Delete"
+          name={date}
+          className="detail__delete"
+          onClick={handleDelete}
+        >
           <i className="far fa-trash-alt"></i>
         </button>
       </Link>
