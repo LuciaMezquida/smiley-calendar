@@ -18,14 +18,14 @@
       background-color: $color-primary;
       color: $color-secondary;
       box-shadow: 3px 5px 18px -7px rgba(0, 0, 0, 0.77);
-      margin: 10px 20px 0;
+      margin: 0 20px;
       width: 100px;
       height: 50px;
       border-radius: 50px;
       font-size: 2.2rem;
       transition: 0.8s ease;
       @media all and (min-width: 768px) {
-        margin: 10px 80px 0;
+        margin: 0px 80px;
         width: 120px;
         height: 70px;
       }
@@ -56,15 +56,12 @@
     height: 30px;
     border-radius: 50px;
     font-size: 1rem;
-    @media all and (min-width: 768px) {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-    }
     &:active {
       transform: scale(0.9);
+    }
+    @media all and (min-width: 768px) {
+      width: 40px;
+      height: 40px;
     }
   }
 }
