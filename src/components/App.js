@@ -52,6 +52,7 @@ class App extends React.Component {
     });
     this.forceUpdate();
     this.smileyData.splice(indexDateButton, 1);
+    localStorage.setItem("info", JSON.stringify(this.smileyData));
   }
   //Render
   pushData(value) {
