@@ -70,7 +70,7 @@ Form page
 
 Detail page
 
-![Detail](https://i.ibb.co/XbgJDpk/Captura-de-pantalla-2020-12-30-a-las-12-13-45.png)
+![Detail](https://i.ibb.co/j5HpW2V/Captura-de-pantalla-2020-12-30-a-las-15-56-02.png)
 
 ## Start the project
 
