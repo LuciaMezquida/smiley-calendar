@@ -3,69 +3,88 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+It is a calendar in which each day you write down how the day has gone by choosing a smiley. Also, you can leave a comment about the day. The idea is to be able to see a period of time in context so that the bad days cannot against the good ones.
 
-In the project directory, you can run:
+## Content
+
+Se pueden añadir vídeos nuevos a la aplicación dándole al botón 'Añadir video', apareciendo una modal donde se podrá añadir título, el video y una descripción del mismo. Automáticamente aparecerá el video junto con los otros ya añadidos. Al hacer click sobre una de las imágenes de los videos accederemos a la reproducción del video y a la descripción.
+
+A su vez, aparecerán varios mensajes de advertencia, como cuando no hay ningún video que coincida con la búsqueda, cuando no se puede cargar el video y un loader para cuando tarde en cargarse.
+
+## Sctructure
+
+~~~
+src
+├── components
+│   ├── About
+│   │   ├── About.js
+│   │   └── About.scss
+│   ├── DaysList
+│   │   ├── DaysList.js
+│   │   └── DaysList.scss
+│   ├── Edition
+│   │   ├── Edition.js
+│   │   └── Edition.scss
+│   ├── Footer
+│   │   ├── Footer.js
+│   │   └── Footer.scss
+│   ├── Header 
+│   │   ├── Header.js
+│   │   └── Header.scss
+│   ├── Landing
+│   │   ├── Landing.js
+│   │   └── Landing.scss
+│   ├── SmileyCard
+│   │   ├── SmileyCard.js
+│   │   └── SmileyCard.scss
+│   ├── SmileyDetail
+│   │   ├── SmileyDetail.js
+│   │   └── SmileyDetail.scss
+│   └── App.js
+├── images
+├── styleSheets
+│   ├── App.scss
+│   ├── index.scss
+│   └── variables.scss
+└── index.js
+
+
+~~~
+
+## Web App
+
+Landing
+
+![Landing](https://i.ibb.co/KzFY9qt/smiley-calendar.png)
+
+Main page
+
+![Main](https://i.ibb.co/cLRB4kM/Captura-de-pantalla-2020-12-30-a-las-12-13-32.png)
+
+Form page
+
+![Form](https://i.ibb.co/h8TQSPZ/Captura-de-pantalla-2020-12-30-a-las-12-13-56.png)
+
+Detail page
+
+![Detail](https://i.ibb.co/XbgJDpk/Captura-de-pantalla-2020-12-30-a-las-12-13-45.png)
+
+## Start the project
+
+### `npm install`
+
+To install the project.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
