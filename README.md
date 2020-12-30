@@ -7,9 +7,12 @@ It is a calendar in which each day you write down how the day has gone by choosi
 
 ## Content
 
-Se pueden añadir vídeos nuevos a la aplicación dándole al botón 'Añadir video', apareciendo una modal donde se podrá añadir título, el video y una descripción del mismo. Automáticamente aparecerá el video junto con los otros ya añadidos. Al hacer click sobre una de las imágenes de los videos accederemos a la reproducción del video y a la descripción.
+From the landing, you can access the main panel where you can see all the added smileys depending on how the day went. There is also the possibility to filter only the good days or the bad days. By clicking on one of the smileys, more detailed information will appear, such as the date and a comment about it.
 
-A su vez, aparecerán varios mensajes de advertencia, como cuando no hay ningún video que coincida con la búsqueda, cuando no se puede cargar el video y un loader para cuando tarde en cargarse.
+From the add button (+) we access the form to add a new day. If the day has been happy, the option to add a comment is activated.
+It's okay if you forget to add one day. It can be added later since when it is added to the main panel it does so chronologically.
+
+In the footer, you can find a list of links to my main social and contact networks and the possibility of returning to the landing by clicking on the copyright.
 
 ## Sctructure
 
