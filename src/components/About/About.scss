@@ -2,6 +2,7 @@
 .about {
   height: 95vh;
   padding: 30px;
+  overflow: scroll;
   &__title {
     margin-bottom: 20px;
     @media all and(min-width: 768px) {
@@ -12,10 +13,10 @@
   }
   &__text1 {
     text-align: center;
-    margin-bottom: 20px;
   }
   &__text,
   &__text1 {
+    margin-bottom: 20px;
     @media all and(min-width: 1024px) {
       font-size: 1.2rem;
     }
