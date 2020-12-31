@@ -44,5 +44,6 @@ SmileyDetail.propTypes = {
   date: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
+  handleDeleteBtn: PropTypes.func.isRequired,
 };
 export default SmileyDetail;
