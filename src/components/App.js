@@ -16,12 +16,12 @@ class App extends React.Component {
       date: getCurrentDate(),
       state: "",
       message: "",
-      happy: false,
-      sad: false,
+      happyFilter: false,
+      sadFilter: false,
+      smileyData: JSON.parse(localStorage.getItem("info"))
+        ? JSON.parse(localStorage.getItem("info"))
+        : [],
     };
-    this.smileyData = JSON.parse(localStorage.getItem("info"))
-      ? JSON.parse(localStorage.getItem("info"))
-      : [];
     this.handleInput = this.handleInput.bind(this);
     this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
@@ -42,7 +42,7 @@ class App extends React.Component {
   }
   handleReset() {
     localStorage.clear();
-    this.smileyData = [];
+    this.setState({ smileyData: [] });
     this.forceUpdate();
   }
   handleDeleteBtn(ev) {
@@ -51,37 +51,37 @@ class App extends React.Component {
       return item.date === dateButton;
     });
     this.forceUpdate();
-    this.smileyData.splice(indexDateButton, 1);
-    localStorage.setItem("info", JSON.stringify(this.smileyData));
+    this.state.smileyData.splice(indexDateButton, 1);
+    localStorage.setItem("info", JSON.stringify(this.state.smileyData));
   }
   //Render
   pushData(value) {
     const { date, state, message } = this.state;
     if ((value === "Save" && date !== "" && state !== "") || message !== "") {
-      this.smileyData.push(this.state);
-      localStorage.setItem("info", JSON.stringify(this.smileyData));
+      this.state.smileyData.push((this.state = { date, state, message }));
+      localStorage.setItem("info", JSON.stringify(this.state.smileyData));
       this.setState({
         date: "",
         state: "",
         message: "",
       });
-      return this.smileyData;
+      return this.state.smileyData;
     }
   }
   filterSmiley() {
-    let goodSmiley;
-    if (this.state.happy) {
-      goodSmiley = this.smileyData.filter((item) => item.state === ":)");
+    let moodSmiley;
+    if (this.state.happyFilter) {
+      moodSmiley = this.state.smileyData.filter((item) => item.state === ":)");
     }
-    if (this.state.sad) {
-      goodSmiley = this.smileyData.filter((item) => item.state === ":(");
+    if (this.state.sadFilter) {
+      moodSmiley = this.state.smileyData.filter((item) => item.state === ":(");
     }
 
-    return goodSmiley;
+    return moodSmiley;
   }
   renderSmileyDetail(props) {
     const smileyDetailDate = props.match.params.date;
-    const smileyDetail = this.smileyData.find(
+    const smileyDetail = this.state.smileyData.find(
       (item) => item.date === smileyDetailDate
     );
     if (smileyDetail) {
@@ -108,7 +108,7 @@ class App extends React.Component {
               data={
                 this.filterSmiley() !== undefined
                   ? this.filterSmiley()
-                  : this.smileyData
+                  : this.state.smileyData
               }
               handleCheck={this.handleCheck}
               handleReset={this.handleReset}
