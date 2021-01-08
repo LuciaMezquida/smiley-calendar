@@ -58,7 +58,7 @@ class App extends React.Component {
   pushData(value) {
     const { date, state, message } = this.state;
     if ((value === "Save" && date !== "" && state !== "") || message !== "") {
-      this.state.smileyData.push((this.state = { date, state, message }));
+      this.state.smileyData.push({ date, state, message });
       localStorage.setItem("info", JSON.stringify(this.state.smileyData));
       this.setState({
         date: "",
