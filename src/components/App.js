@@ -7,23 +7,18 @@ import About from "./About/About";
 import Edition from "./Edition/Edition";
 import DaysList from "./DaysList/DaysList";
 import SmileyDetail from "./SmileyDetail/SmileyDetail";
-import { getCurrentDate } from "../utils/getData";
+// import { getCurrentDate } from "../utils/getData";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: getCurrentDate(),
-      state: "",
-      message: "",
       happyFilter: false,
       sadFilter: false,
       smileyData: JSON.parse(localStorage.getItem("info"))
         ? JSON.parse(localStorage.getItem("info"))
         : [],
     };
-    this.handleInput = this.handleInput.bind(this);
-    this.pushData = this.pushData.bind(this);
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.filterSmiley = this.filterSmiley.bind(this);
@@ -32,43 +27,23 @@ class App extends React.Component {
   }
 
   //Events
-  handleInput(ev) {
-    this.setState({
-      [ev.currentTarget.name]: ev.currentTarget.value,
-    });
-  }
   handleCheck(ev) {
     this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
   }
   handleReset() {
     localStorage.clear();
     this.setState({ smileyData: [] });
-    this.forceUpdate();
   }
   handleDeleteBtn(ev) {
     const dateButton = ev.currentTarget.name;
-    const indexDateButton = this.smileyData.findIndex((item) => {
+    const indexDateButton = this.state.smileyData.findIndex((item) => {
       return item.date === dateButton;
     });
-    this.forceUpdate();
     this.state.smileyData.splice(indexDateButton, 1);
     localStorage.setItem("info", JSON.stringify(this.state.smileyData));
   }
   //Render
-  pushData(value) {
-    const { date, state, message } = this.state;
-    if ((value === "Save" && date !== "" && state !== "") || message !== "") {
-      this.state.smileyData.push({ date, state, message });
-      localStorage.setItem("info", JSON.stringify(this.state.smileyData));
-      this.setState({
-        date: "",
-        state: "",
-        message: "",
-      });
-      return this.state.smileyData;
-    }
-  }
-  filterSmiley() {
+  filterSmiley(props) {
     let moodSmiley;
     if (this.state.happyFilter) {
       moodSmiley = this.state.smileyData.filter((item) => item.state === ":)");
@@ -115,12 +90,7 @@ class App extends React.Component {
             />
           </Route>
           <Route path="/edition">
-            <Edition
-              handleInput={this.handleInput}
-              pushData={this.pushData}
-              state={this.state.state}
-              date={this.state.date}
-            />
+            <Edition smileyData={this.state.smileyData} />
           </Route>
           <Route path="/:date" render={this.renderSmileyDetail} />
         </Switch>
