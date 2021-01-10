@@ -3,22 +3,36 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const SmileyDetail = ({ date, state, message, handleDeleteBtn }) => {
+const SmileyDetail = ({ dataSingleSmiley, smileyData }) => {
   const handleDelete = (ev) => {
     handleDeleteBtn(ev);
+  };
+  const handleDeleteBtn = (ev) => {
+    const dateButton = ev.currentTarget.name;
+    const indexDateButton = smileyData.findIndex((item) => {
+      return item.date === dateButton;
+    });
+    smileyData.splice(indexDateButton, 1);
+    localStorage.setItem("info", JSON.stringify(smileyData));
   };
   return (
     <div className="detail">
       <article className="detail__article">
         <h3
-          className={`detail__smiley ${state === ":)" ? "happy" : "unhappy"}`}
+          className={`detail__smiley ${
+            dataSingleSmiley.state === ":)" ? "happy" : "unhappy"
+          }`}
         >
-          {state}
+          {dataSingleSmiley.state}
         </h3>
-        <p className={`detail__date ${state === ":)" ? "happy" : "unhappy"}`}>
-          {date}
+        <p
+          className={`detail__date ${
+            dataSingleSmiley.state === ":)" ? "happy" : "unhappy"
+          }`}
+        >
+          {dataSingleSmiley.date}
         </p>
-        <p className="detail__message">{message}</p>
+        <p className="detail__message">{dataSingleSmiley.message}</p>
       </article>
       <Link
         className="link detail__button"
@@ -30,7 +44,7 @@ const SmileyDetail = ({ date, state, message, handleDeleteBtn }) => {
       <Link className="link" to="/year">
         <button
           title="Delete"
-          name={date}
+          name={dataSingleSmiley.date}
           className="detail__delete"
           onClick={handleDelete}
         >
@@ -41,9 +55,7 @@ const SmileyDetail = ({ date, state, message, handleDeleteBtn }) => {
   );
 };
 SmileyDetail.propTypes = {
-  date: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  handleDeleteBtn: PropTypes.func.isRequired,
+  smileyData: PropTypes.array.isRequired,
+  dataSingleSmiley: PropTypes.object.isRequired,
 };
 export default SmileyDetail;

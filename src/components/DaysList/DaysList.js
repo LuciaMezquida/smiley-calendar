@@ -11,17 +11,39 @@ import FormControl from "@material-ui/core/FormControl";
 class DaysList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      happyFilter: false,
+      sadFilter: false,
+      smileyData: this.props.data,
+    };
     this.handleCheck = this.handleCheck.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.filterSmiley = this.filterSmiley.bind(this);
   }
   handleCheck(ev) {
-    this.props.handleCheck(ev);
+    this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
   }
   handleReset() {
-    this.props.handleReset();
+    localStorage.clear();
+    this.setState({ smileyData: [] });
+  }
+  filterSmiley() {
+    let moodSmiley;
+    if (this.state.happyFilter) {
+      moodSmiley = this.state.smileyData.filter((item) => item.state === ":)");
+    }
+    if (this.state.sadFilter) {
+      moodSmiley = this.state.smileyData.filter((item) => item.state === ":(");
+    }
+
+    return moodSmiley;
   }
   render() {
-    const smileyList = this.props.data
+    const filteredData =
+      this.filterSmiley() !== undefined
+        ? this.filterSmiley()
+        : this.state.smileyData;
+    const smileyList = filteredData
       .sort((a, b) => new Date(a.date) - new Date(b.date))
       .map((item, index) => (
         <li key={index}>
@@ -79,7 +101,5 @@ class DaysList extends Component {
 }
 DaysList.propTypes = {
   data: PropTypes.array.isRequired,
-  handleCheck: PropTypes.func.isRequired,
-  handleReset: PropTypes.func.isRequired,
 };
 export default DaysList;

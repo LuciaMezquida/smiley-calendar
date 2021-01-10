@@ -13,47 +13,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      happyFilter: false,
-      sadFilter: false,
       smileyData: JSON.parse(localStorage.getItem("info"))
         ? JSON.parse(localStorage.getItem("info"))
         : [],
     };
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
-    this.handleCheck = this.handleCheck.bind(this);
-    this.filterSmiley = this.filterSmiley.bind(this);
-    this.handleReset = this.handleReset.bind(this);
-    this.handleDeleteBtn = this.handleDeleteBtn.bind(this);
-  }
-
-  //Events
-  handleCheck(ev) {
-    this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
-  }
-  handleReset() {
-    localStorage.clear();
-    this.setState({ smileyData: [] });
-  }
-  handleDeleteBtn(ev) {
-    const dateButton = ev.currentTarget.name;
-    const indexDateButton = this.state.smileyData.findIndex((item) => {
-      return item.date === dateButton;
-    });
-    this.state.smileyData.splice(indexDateButton, 1);
-    localStorage.setItem("info", JSON.stringify(this.state.smileyData));
   }
   //Render
-  filterSmiley(props) {
-    let moodSmiley;
-    if (this.state.happyFilter) {
-      moodSmiley = this.state.smileyData.filter((item) => item.state === ":)");
-    }
-    if (this.state.sadFilter) {
-      moodSmiley = this.state.smileyData.filter((item) => item.state === ":(");
-    }
-
-    return moodSmiley;
-  }
   renderSmileyDetail(props) {
     const smileyDetailDate = props.match.params.date;
     const smileyDetail = this.state.smileyData.find(
@@ -62,10 +28,8 @@ class App extends React.Component {
     if (smileyDetail) {
       return (
         <SmileyDetail
-          state={smileyDetail.state}
-          date={smileyDetail.date}
-          message={smileyDetail.message}
-          handleDeleteBtn={this.handleDeleteBtn}
+          dataSingleSmiley={smileyDetail}
+          smileyData={this.state.smileyData}
         />
       );
     }
@@ -79,15 +43,7 @@ class App extends React.Component {
           </Route>
           <Route path="/about" component={About} />
           <Route path="/year">
-            <DaysList
-              data={
-                this.filterSmiley() !== undefined
-                  ? this.filterSmiley()
-                  : this.state.smileyData
-              }
-              handleCheck={this.handleCheck}
-              handleReset={this.handleReset}
-            />
+            <DaysList data={this.state.smileyData} />
           </Route>
           <Route path="/edition">
             <Edition smileyData={this.state.smileyData} />
