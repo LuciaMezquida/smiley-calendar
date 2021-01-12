@@ -37,7 +37,7 @@ class Edition extends Component {
   }
 
   render() {
-    const { date, state } = this.state;
+    const { date } = this.state;
     return (
       <form className="edition">
         <label htmlFor="date" className="edition__label">
