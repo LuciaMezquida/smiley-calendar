@@ -86,7 +86,7 @@ class Edition extends Component {
           id="message"
           className="edition__textarea"
           placeholder="How was your day?"
-          disabled={state === ":)" ? false : true}
+          // disabled={state === ":)" ? false : true}
         />
         <div className="edition__button-container">
           <Link to="/year" title="Save smiley">
