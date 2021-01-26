@@ -22,19 +22,8 @@ class Edition extends Component {
   //pasarlo a App y subir los datos
   pushData(ev) {
     const { date, state, message } = this.state;
-    if (
-      (ev.currentTarget.value === "Save" && date !== "" && state !== "") ||
-      message !== ""
-    ) {
-      this.props.smileyData.push({ date, state, message });
-      localStorage.setItem("info", JSON.stringify(this.props.smileyData));
-      this.setState({
-        date: "",
-        state: "",
-        message: "",
-      });
-      return this.props.smileyData;
-    }
+    const value = ev.currentTarget.value;
+    this.props.pushData(value, date, state, message);
   }
 
   render() {
@@ -108,6 +97,6 @@ class Edition extends Component {
 }
 
 Edition.propTypes = {
-  smileyData: PropTypes.array.isRequired,
+  pushData: PropTypes.func.isRequired,
 };
 export default Edition;
