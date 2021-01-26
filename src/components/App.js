@@ -18,6 +18,12 @@ class App extends React.Component {
         : [],
     };
     this.renderSmileyDetail = this.renderSmileyDetail.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+  //handle
+  handleReset() {
+    localStorage.clear();
+    this.setState({ smileyData: [] });
   }
   //Render
   renderSmileyDetail(props) {
@@ -34,6 +40,22 @@ class App extends React.Component {
       );
     }
   }
+  pushData(ev) {
+    const { date, state, message } = this.state;
+    if (
+      (ev.currentTarget.value === "Save" && date !== "" && state !== "") ||
+      message !== ""
+    ) {
+      this.props.smileyData.push({ date, state, message });
+      localStorage.setItem("info", JSON.stringify(this.props.smileyData));
+      this.setState({
+        date: "",
+        state: "",
+        message: "",
+      });
+      return this.props.smileyData;
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -43,7 +65,10 @@ class App extends React.Component {
           </Route>
           <Route path="/about" component={About} />
           <Route path="/year">
-            <DaysList data={this.state.smileyData} />
+            <DaysList
+              smileyData={this.state.smileyData}
+              handleReset={this.handleReset}
+            />
           </Route>
           <Route path="/edition">
             <Edition smileyData={this.state.smileyData} />

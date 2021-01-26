@@ -19,6 +19,7 @@ class Edition extends Component {
       [ev.currentTarget.name]: ev.currentTarget.value,
     });
   }
+  //pasarlo a App y subir los datos
   pushData(ev) {
     const { date, state, message } = this.state;
     if (

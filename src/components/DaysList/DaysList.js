@@ -14,26 +14,27 @@ class DaysList extends Component {
     this.state = {
       happyFilter: false,
       sadFilter: false,
-      smileyData: this.props.data,
     };
     this.handleCheck = this.handleCheck.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.filterSmiley = this.filterSmiley.bind(this);
   }
+  //handle
   handleCheck(ev) {
     this.setState({ [ev.currentTarget.value]: ev.currentTarget.checked });
   }
+
   handleReset() {
-    localStorage.clear();
-    this.setState({ smileyData: [] });
+    this.props.handleReset();
   }
+  //render
   filterSmiley() {
     let moodSmiley;
     if (this.state.happyFilter) {
-      moodSmiley = this.state.smileyData.filter((item) => item.state === ":)");
+      moodSmiley = this.props.smileyData.filter((item) => item.state === ":)");
     }
     if (this.state.sadFilter) {
-      moodSmiley = this.state.smileyData.filter((item) => item.state === ":(");
+      moodSmiley = this.props.smileyData.filter((item) => item.state === ":(");
     }
 
     return moodSmiley;
@@ -42,7 +43,7 @@ class DaysList extends Component {
     const filteredData =
       this.filterSmiley() !== undefined
         ? this.filterSmiley()
-        : this.state.smileyData;
+        : this.props.smileyData;
     const smileyList = filteredData
       .sort((a, b) => new Date(a.date) - new Date(b.date))
       .map((item, index) => (
@@ -100,6 +101,7 @@ class DaysList extends Component {
   }
 }
 DaysList.propTypes = {
-  data: PropTypes.array.isRequired,
+  smileyData: PropTypes.array.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 export default DaysList;
